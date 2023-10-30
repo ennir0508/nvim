@@ -1,3 +1,44 @@
 # Example_config
 
-This can be used as an example custom config for NvChad. Do check the https://github.com/NvChad/nvcommunity
+This can be used as an example custom config for NvChad. Do check the
+https://github.com/NvChad/nvcommunity
+
+## Features
+
+- format on save
+- file seting(newline, utf8, swap, e.t.c.)
+- map
+
+## Plugins
+
+- first
+
+## LSP
+
+- first
+
+### Features to be added in the future
+
+- solution for fzf error
+- solution for nvim-web-devicons
+- Plugins
+  - makrdown/markdown-preview
+  - notify
+  - dap
+  - nvim-bqf \* consideration needed
+  - trouble \* consideration needed
+  - diffview
+  - git-blame that shows who edit latest like git-lens.
+  - copilot
+  - todo-comments
+  - nvim-pack/nvim-spectre
+  - emmit for tsx
+- LSP
+  - markdown
+    - auto indent for list
+  - java
+    - for spring boot
+    - jdtls ?
+  - docker/docker-compose
+  - sql
+  - shell
