@@ -23,6 +23,14 @@ M.treesitter = {
 
 M.mason = {
   ensure_installed = {
+    -- all ext stuff
+    "diagnostic-languageserver",
+    "efm",
+
+    -- dockerfile stuff
+    "docker-compose-language-service",
+    "dockerfile-language-server",
+
     -- lua stuff
     "lua-language-server",
     "stylua",
@@ -33,10 +41,15 @@ M.mason = {
     "typescript-language-server",
     "deno",
     "prettier",
+    "json-lsp",
+
+    "yaml-language-server",
 
     -- c/cpp stuff
     "clangd",
     "clang-format",
+
+    "powershell-editor-services",
   },
 }
 
@@ -51,6 +64,30 @@ M.nvimtree = {
     icons = {
       show = {
         git = true,
+      },
+
+      glyphs = {
+        default = "",
+        symlink = "",
+        folder = {
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
+          arrow_open = "",
+          arrow_closed = "",
+        },
+        git = {
+          unstaged = "M",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "★",
+          deleted = "",
+          ignored = "◌",
+        },
       },
     },
   },
