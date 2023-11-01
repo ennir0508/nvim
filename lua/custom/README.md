@@ -19,6 +19,7 @@ https://github.com/NvChad/nvcommunity
 
 ### Features to be added in the future
 
+- use pwsh
 - solution for fzf error
 - solution for nvim-web-devicons
 - Plugins
