@@ -8,6 +8,10 @@ https://github.com/NvChad/nvcommunity
 - format on save
 - file seting(newline, utf8, swap, e.t.c.)
 - map
+- \[solution\] for nvim-web-devicons
+  - change font in Powershell
+  - use this one.
+    [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip)
 
 ## Plugins
 
@@ -21,10 +25,6 @@ https://github.com/NvChad/nvcommunity
 
 - use pwsh
 - solution for fzf error
-- solution for nvim-web-devicons
-  - change font in Powershell
-  - use this one.
-    [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip)
 - Plugins
   - makrdown/markdown-preview
   - notify
