@@ -67,14 +67,15 @@ M.nvimtree = {
       },
 
       glyphs = {
-        default = "",
+        -- default = "󰈚",
+        default = "󰈙", -- nf-md-file_document
         symlink = "",
         folder = {
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = "",
-          symlink = "",
+          default = "󰉋", -- nf-md-folder
+          empty = "󰉖", -- nf-md-folder_outline
+          empty_open = "󰷏", -- nf-md-folder_open_outline
+          open = "󰝰", -- nf-md-folder_open
+          symlink = "",
           symlink_open = "",
           arrow_open = "",
           arrow_closed = "",
@@ -84,7 +85,7 @@ M.nvimtree = {
           staged = "✓",
           unmerged = "",
           renamed = "➜",
-          untracked = "★",
+          untracked = "?", -- nf-fa-question
           deleted = "",
           ignored = "◌",
         },
