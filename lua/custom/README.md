@@ -12,6 +12,11 @@ https://github.com/NvChad/nvcommunity
   - change font in Powershell
   - use this one.
     [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip)
+- Plugins
+  - rcarriga/nvim-notify
+  - nvim-pack/nvim-spectre
+  - folke/trouble.nvim
+  - folke/todo-comments.nvim
 
 ## Plugins
 
@@ -27,15 +32,11 @@ https://github.com/NvChad/nvcommunity
 - solution for fzf error
 - Plugins
   - makrdown/markdown-preview
-  - notify
   - dap
   - nvim-bqf \* consideration needed
-  - trouble \* consideration needed
   - diffview
   - git-blame that shows who edit latest like git-lens.
   - copilot
-  - todo-comments
-  - nvim-pack/nvim-spectre
   - emmit for tsx
 - LSP
   - markdown

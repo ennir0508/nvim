@@ -20,6 +20,7 @@ opt.swapfile = false -- Disables creating swap files.
 opt.title = true -- Sets the title of the terminal window to the name of the file being edited.
 opt.scrolloff = 10 -- Keeps 10 lines of context above and below the cursor.
 opt.inccommand = "split" -- Shows the effect of a command incrementally, highlighting the affected text.
+opt.termguicolors = true
 
 -- Search
 opt.hlsearch = true -- Highlights all matching search patterns.
