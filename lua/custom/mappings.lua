@@ -89,4 +89,12 @@ M.todo_comments = {
   },
 }
 
+M.markdown = {
+  n = {
+    ["<leader>mdp"] = { "<cmd> MarkdownPreview <cr>", "Markdown Preview" },
+    ["<leader>mds"] = { "<cmd> MarkdownPreviewStop <cr>", "Markdown Preview stop" },
+    ["<leader>mdt"] = { "<cmd> MarkdownPreviewToggle <cr>", "Markdown Preview toggle" },
+  },
+}
+
 return M

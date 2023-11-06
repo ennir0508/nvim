@@ -90,6 +90,15 @@ local plugins = {
     cmd = { "TodoQuickFix", "TodoLocList", "TodoTrouble", "TodoTelescope" },
     opts = { overrides.todoComments },
   },
+  -- install without yarn or npm
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
 }
-
 return plugins

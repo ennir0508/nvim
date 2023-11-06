@@ -17,6 +17,9 @@ https://github.com/NvChad/nvcommunity
   - nvim-pack/nvim-spectre
   - folke/trouble.nvim
   - folke/todo-comments.nvim
+  - git-blame that shows who edit latest like git-lens.
+    - Gitsign
+  - makrdown/markdown-preview
 
 ## Plugins
 
@@ -31,11 +34,9 @@ https://github.com/NvChad/nvcommunity
 - use pwsh
 - solution for fzf error
 - Plugins
-  - makrdown/markdown-preview
   - dap
   - nvim-bqf \* consideration needed
   - diffview
-  - git-blame that shows who edit latest like git-lens.
   - copilot
   - emmit for tsx
 - LSP
