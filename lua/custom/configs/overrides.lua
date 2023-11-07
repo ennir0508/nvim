@@ -49,6 +49,11 @@ M.mason = {
     "clangd",
     "clang-format",
 
+    -- java stuff
+    "java-debug-adapter",
+    "java-test",
+    "jdtls",
+
     "powershell-editor-services",
   },
 }
