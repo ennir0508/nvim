@@ -97,4 +97,23 @@ M.markdown = {
   },
 }
 
+M.dap = {
+  n = {
+    ["<leader>Dt"] = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+    ["<leader>Db"] = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
+    ["<leader>Dc"] = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+    ["<leader>DC"] = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
+    ["<leader>Dd"] = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
+    ["<leader>Dg"] = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
+    ["<leader>Di"] = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+    ["<leader>Do"] = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+    ["<leader>Du"] = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+    ["<leader>Dp"] = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
+    ["<leader>Dr"] = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+    ["<leader>Ds"] = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+    ["<leader>Dq"] = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+    ["<leader>DU"] = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
+  },
+}
+
 return M

@@ -1,4 +1,5 @@
 local overrides = require "custom.configs.overrides"
+local dap = require "custom.configs.dap"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -113,16 +114,30 @@ local plugins = {
   -- Set breakpoints and step through code
   -- Inspect the state of the application
   {
-    "mfussenegger/nvim-dap",
+    "rcarriga/cmp-dap",
   },
+
+  -- Debugging
+  {
+    "mfussenegger/nvim-dap",
+    config = function()
+      dap.setup()
+    end,
+    lazy = true,
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+    },
+    enabled = dap.active,
+  },
+
+  -- Debugger user interface
   {
     "rcarriga/nvim-dap-ui",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-    },
-  },
-  {
-    "rcarriga/cmp-dap",
+    config = function()
+      dap.setup_ui()
+    end,
+    lazy = true,
+    enabled = dap.active,
   },
 }
 return plugins
