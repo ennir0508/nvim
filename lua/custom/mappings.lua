@@ -11,7 +11,6 @@ M.general = {
 
     ["s"] = { '"_s', "replace char without yank and change to insert mode" },
     ["x"] = { '"_x', "erase char without yank" },
-    ["<BS>"] = { '"_xh', "Backspace is enable in nomal mode" },
 
     ["<C-a>"] = { "gg<S-v>G", "Select All" },
   },
@@ -19,8 +18,6 @@ M.general = {
     [">"] = { ">gv", "indent" },
   },
 }
-
--- more keybinds!
 
 M.spectre = {
   n = {
@@ -86,6 +83,33 @@ M.todo_comments = {
     ["<leader>xT"] = { "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", "Todo/Fix/Fixme (Trouble)" },
     ["<leader>st"] = { "<cmd>TodoTelescope<cr>", "Todo" },
     ["<leader>sT"] = { "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", "Todo/Fix/Fixme" },
+  },
+}
+
+M.markdown = {
+  n = {
+    ["<leader>mdp"] = { "<cmd> MarkdownPreview <cr>", "Markdown Preview" },
+    ["<leader>mds"] = { "<cmd> MarkdownPreviewStop <cr>", "Markdown Preview stop" },
+    ["<leader>mdt"] = { "<cmd> MarkdownPreviewToggle <cr>", "Markdown Preview toggle" },
+  },
+}
+
+M.dap = {
+  n = {
+    ["<leader>Dt"] = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+    ["<leader>Db"] = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
+    -- ["<F-8>"] = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+    ["<leader>DC"] = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
+    ["<leader>Dd"] = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
+    ["<leader>Dg"] = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
+    ["<F-6>"] = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+    ["<F-5>"] = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+    ["<F-7>"] = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+    ["<F-4>"] = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
+    ["<leader>dr"] = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+    ["<F-8>"] = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+    ["<leader>dc"] = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+    ["<leader>du"] = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
   },
 }
 

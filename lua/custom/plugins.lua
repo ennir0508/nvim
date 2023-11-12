@@ -1,4 +1,5 @@
 local overrides = require "custom.configs.overrides"
+local dap = require "custom.configs.dap"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -29,6 +30,10 @@ local plugins = {
   },
 
   {
+    "mfussenegger/nvim-jdtls",
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
@@ -48,18 +53,18 @@ local plugins = {
   },
 
   -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
+  {
+    "NvChad/nvim-colorizer.lua",
+    enabled = false,
+  },
 
   -- All NvChad plugins are lazy-loaded by default
   -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
   -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
+  {
+    "mg979/vim-visual-multi",
+    lazy = false,
+  },
 
   {
     "rcarriga/nvim-notify",
@@ -90,6 +95,49 @@ local plugins = {
     cmd = { "TodoQuickFix", "TodoLocList", "TodoTrouble", "TodoTelescope" },
     opts = { overrides.todoComments },
   },
-}
+  -- install without yarn or npm
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
 
+  -- DAP (Debug Adapter Protocol)
+  -- nvim-dap is a Debug Adapter Protocol client implementation for Neovim. nvim-dap allows you to:
+  --
+  -- Launch an application to debug
+  -- Attach to running applications and debug them
+  -- Set breakpoints and step through code
+  -- Inspect the state of the application
+  {
+    "rcarriga/cmp-dap",
+  },
+
+  -- Debugging
+  {
+    "mfussenegger/nvim-dap",
+    config = function()
+      dap.setup()
+    end,
+    lazy = true,
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+    },
+    enabled = dap.active,
+  },
+
+  -- Debugger user interface
+  {
+    "rcarriga/nvim-dap-ui",
+    config = function()
+      dap.setup_ui()
+    end,
+    lazy = true,
+    enabled = dap.active,
+  },
+}
 return plugins

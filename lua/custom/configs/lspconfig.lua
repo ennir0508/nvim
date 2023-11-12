@@ -14,6 +14,7 @@ local servers = {
   "dockerls",
   "efm",
   "jsonls",
+  "jdtls",
   "powershell_es",
   "yamlls",
 }
@@ -102,7 +103,7 @@ lspconfig.custom_elements_ls.setup {}
 -- lspconfig.hls.setup {}
 
 -- Java: a popular, versatile, and platform-independent programming language.
--- lspconfig.jdtls.setup {}
+lspconfig.jdtls.setup {}
 
 -- JSON (JavaScript Object Notation): a lightweight data interchange format.
 --     Already added as default
