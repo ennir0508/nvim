@@ -11,7 +11,6 @@ M.general = {
 
     ["s"] = { '"_s', "replace char without yank and change to insert mode" },
     ["x"] = { '"_x', "erase char without yank" },
-    ["<BS>"] = { '"_xh', "Backspace is enable in nomal mode" },
 
     ["<C-a>"] = { "gg<S-v>G", "Select All" },
   },
@@ -19,8 +18,6 @@ M.general = {
     [">"] = { ">gv", "indent" },
   },
 }
-
--- more keybinds!
 
 M.spectre = {
   n = {
@@ -101,18 +98,18 @@ M.dap = {
   n = {
     ["<leader>Dt"] = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
     ["<leader>Db"] = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
-    ["<leader>Dc"] = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+    -- ["<F-8>"] = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
     ["<leader>DC"] = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
     ["<leader>Dd"] = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
     ["<leader>Dg"] = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
-    ["<leader>Di"] = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
-    ["<leader>Do"] = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
-    ["<leader>Du"] = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
-    ["<leader>Dp"] = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
-    ["<leader>Dr"] = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-    ["<leader>Ds"] = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
-    ["<leader>Dq"] = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
-    ["<leader>DU"] = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
+    ["<F-6>"] = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+    ["<F-5>"] = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+    ["<F-7>"] = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+    ["<F-4>"] = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
+    ["<leader>dr"] = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+    ["<F-8>"] = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+    ["<leader>dc"] = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+    ["<leader>du"] = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
   },
 }
 

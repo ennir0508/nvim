@@ -1,7 +1,4 @@
 -- Java Language Server configuration.
--- Locations:
--- 'nvim/ftplugin/java.lua'.
--- 'nvim/lang-servers/intellij-java-google-style.xml'
 local jdtls_ok, jdtls = pcall(require, "jdtls")
 if not jdtls_ok then
   vim.notify "JDTLS not found, install with `:LspInstall jdtls`"
@@ -9,12 +6,18 @@ if not jdtls_ok then
 end
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
-local jdtls_path = vim.fn.stdpath "data" .. "/mason/packages/jdtls"
-local path_to_lsp_server = jdtls_path .. "/config_win"
-local path_to_plugins = jdtls_path .. "/plugins/"
-local path_to_jar = path_to_plugins .. "org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar"
-local lombok_path = path_to_plugins .. "lombok.jar"
-local path_to_java_dap = "$env:USERPROFILE/Develop/tools/java-debug-0.49.0/com.microsoft.java.debug.plugin/target"
+local mason_path = vim.fn.stdpath "data" .. "/mason/"
+local mason_package_path = mason_path .. "packages/"
+
+-- Java Language Server
+local jdtls_path = mason_package_path .. "jdtls/"
+local path_to_lsp_server = jdtls_path .. "config_win"
+local path_to_jar = jdtls_path .. "plugins/org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar"
+local lombok_path = jdtls_path .. "lombok.jar"
+
+-- Java Debuger
+local path_to_java_dap = mason_package_path .. "java-debug-adapter/extension/server/"
+local path_to_java_test_dap = mason_package_path .. "java-test/extension/server/"
 
 local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
 local root_dir = require("jdtls.setup").find_root(root_markers)
@@ -26,12 +29,18 @@ local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = vim.fn.stdpath "data" .. "/site/java/workspace-root/" .. project_name
 os.execute("mkdir " .. workspace_dir)
 
+-- This bundles definition is the same as in the previous section (java-debug installation)
+local bundles = {
+  vim.fn.glob(path_to_java_dap .. "com.microsoft.java.debug.plugin-*.jar", 1),
+}
+vim.list_extend(bundles, vim.split(vim.fn.glob(path_to_java_test_dap .. "*.jar", 1), "\n"))
+
 -- Main Config
 local config = {
   -- The command that starts the language server
   -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
   cmd = {
-    "$env:JAVA_HOME/bin/java.exe",
+    os.getenv "JAVA_HOME" .. "/bin/java",
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",
     "-Dosgi.bundles.defaultStartLevel=4",
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
@@ -62,7 +71,7 @@ local config = {
   -- for a list of options
   settings = {
     java = {
-      home = "$env:JAVA_HOME/",
+      home = os.getenv "JAVA_HOME",
       eclipse = {
         downloadSources = true,
       },
@@ -71,7 +80,7 @@ local config = {
         runtimes = {
           {
             name = "JavaSE-17",
-            path = "$env:JAVA_HOME",
+            path = os.getenv "JAVA_HOME",
           },
         },
       },
@@ -132,9 +141,7 @@ local config = {
     allow_incremental_sync = true,
   },
   init_options = {
-    bundles = {
-      vim.fn.glob(path_to_java_dap .. "com.microsoft.java.debug.plugin-0.49.0.jar", 1),
-    },
+    bundles = bundles,
   },
 
   on_attach = function(_, bufnr)
@@ -147,10 +154,10 @@ local config = {
         border = "rounded",
       },
     }, bufnr)
-    require("jdtls").setup_dap { hotcodereplace = "auto" }
+    jdtls.setup_dap { hotcodereplace = "auto" }
   end,
 }
 
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
-require("jdtls").start_or_attach(config)
+jdtls.start_or_attach(config)
