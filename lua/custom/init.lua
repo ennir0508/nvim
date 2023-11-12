@@ -16,6 +16,10 @@ opt.backup = false
 opt.backupskip = "/tmp/*,/private/tmp/*"
 opt.swapfile = false -- Disables creating swap files.
 
+opt.shell = "pwsh" -- Sets PowerShell as the default shell.
+opt.shellcmdflag = "-nologo -noprofile -ExecutionPolicy RemoteSigned -command" -- Passes additional flags to PowerShell.
+opt.shellxquote = "" -- Disables quoting in shell commands.
+
 -- Appearance
 opt.title = true -- Sets the title of the terminal window to the name of the file being edited.
 opt.scrolloff = 10 -- Keeps 10 lines of context above and below the cursor.

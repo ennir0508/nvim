@@ -5,6 +5,7 @@ https://github.com/NvChad/nvcommunity
 
 ## Features
 
+- use pwsh
 - format on save
 - file seting(newline, utf8, swap, e.t.c.)
 - map
@@ -38,7 +39,6 @@ https://github.com/NvChad/nvcommunity
 
 ### Features to be added in the future
 
-- use pwsh
 - solution for fzf error
 
   ```log
