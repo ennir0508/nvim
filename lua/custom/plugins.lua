@@ -5,7 +5,6 @@ local dap = require "custom.configs.dap"
 local plugins = {
 
   -- Override plugin definition options
-
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -139,5 +138,15 @@ local plugins = {
     lazy = true,
     enabled = dap.active,
   },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        file_ignore_patterns = { "node_modules", "bin" },
+      },
+    },
+  },
 }
+
 return plugins
