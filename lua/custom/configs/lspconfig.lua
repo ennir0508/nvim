@@ -12,7 +12,7 @@ local servers = {
   "diagnosticls",
   "docker_compose_language_service",
   "dockerls",
-  "efm",
+  -- "efm",
   "jsonls",
   "jdtls",
   "powershell_es",

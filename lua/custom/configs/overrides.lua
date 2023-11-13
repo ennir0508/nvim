@@ -25,7 +25,7 @@ M.mason = {
   ensure_installed = {
     -- all ext stuff
     "diagnostic-languageserver",
-    "efm",
+    -- "efm",
 
     -- dockerfile stuff
     "docker-compose-language-service",

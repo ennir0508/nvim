@@ -13,6 +13,9 @@ https://github.com/NvChad/nvcommunity
   - change font in Powershell
   - use this one.
     [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip)
+
+## Plugins
+
 - Plugins
   - rcarriga/nvim-notify
   - nvim-pack/nvim-spectre
@@ -21,21 +24,19 @@ https://github.com/NvChad/nvcommunity
   - git-blame that shows who edit latest like git-lens.
     - Gitsign
   - makrdown/markdown-preview
+
+## LSP
+
 - LSP
   - markdown
     - auto indent for list
   - java
+    - dap
+      - https://github.com/mfussenegger/nvim-jdtls
     - for spring boot
     - jdtls
   - docker/docker-compose
-
-## Plugins
-
-- first
-
-## LSP
-
-- first
+  - sql
 
 ### Features to be added in the future
 
@@ -53,13 +54,12 @@ https://github.com/NvChad/nvcommunity
     - lua/plugins/init.lua:247 _in_ **config**
   ```
 
+  - this error shows at only once.
+
 - Plugins
-  - dap
-    - https://github.com/mfussenegger/nvim-jdtls
   - nvim-bqf \* consideration needed
   - diffview
   - copilot
   - emmit for tsx
 - LSP
-  - sql
   - shell
