@@ -147,6 +147,19 @@ local plugins = {
       },
     },
   },
+
+  {
+    "dinhhuy258/git.nvim",
+    config = function()
+      require("custom.configs.git").setup()
+    end,
+  },
+
+  {
+    "sindrets/diffview.nvim",
+    lazy = true,
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 }
 
 return plugins
