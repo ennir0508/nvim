@@ -54,7 +54,6 @@ local plugins = {
   -- To make a plugin not be loaded
   {
     "NvChad/nvim-colorizer.lua",
-    enabled = false,
   },
 
   -- All NvChad plugins are lazy-loaded by default
