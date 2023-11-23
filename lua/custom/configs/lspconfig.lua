@@ -69,11 +69,11 @@ lspconfig.custom_elements_ls.setup {
 
 -- Docker Compose: Docker container configuration.
 --     Already added as default
--- lspconfig.docker_compose_language_service.setup {}
+lspconfig.docker_compose_language_service.setup {}
 
 -- Docker: Platform for containerizing and deploying applications easily.
 --     Already added as default
--- lspconfig.dockerls.setup {}
+lspconfig.dockerls.setup {}
 
 -- EFM (EditorConfig Format Manager): it manages code formatting in text editors.
 --     Already added as default
@@ -120,7 +120,7 @@ lspconfig.jdtls.setup {}
 
 -- Powershell: a powershell and command language for scripting tasks.
 --     Already added as default
--- lspconfig.powershell_es.setup {}
+lspconfig.powershell_es.setup {}
 
 -- Python: a versatile, high-level programming language known for readability.
 -- lspconfig.pyright.setup {}
