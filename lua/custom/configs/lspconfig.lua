@@ -56,7 +56,9 @@ lspconfig.bashls.setup {}
 lspconfig.cssmodules_ls.setup {}
 
 -- Custom Elements: it allows creation of new HTML tags in web development.
-lspconfig.custom_elements_ls.setup {}
+lspconfig.custom_elements_ls.setup {
+  filetypes = { "html", "javascript", "typescript", "javascriptreact", "typescriptreact", "jsx", "tsx", "vue" },
+}
 
 -- Dart: a programming language for web and app development.
 -- lspconfig.dartls.setup {}
@@ -91,7 +93,7 @@ lspconfig.custom_elements_ls.setup {}
 -- }
 
 -- Gradle: a build automation tool for building software projects.
--- lspconfig.gradle_ls.setup {}
+lspconfig.gradle_ls.setup {}
 
 -- GraphQL: a query language for APIs, enabling more efficient data retrieval.
 -- lspconfig.graphql.setup {}
