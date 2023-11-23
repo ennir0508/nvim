@@ -1,7 +1,11 @@
 ---@type MappingsTable
 local M = {}
 
+--
+-- General Mappings
+--
 M.general = {
+  -- Noraml Mode
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
 
@@ -13,12 +17,36 @@ M.general = {
     ["x"] = { '"_x', "erase char without yank" },
 
     ["<C-a>"] = { "gg<S-v>G", "Select All" },
+
+    -- Split window
+    ["ss"] = { "<cmd>split<cr>", "Sprit window to horizon" },
+    ["sv"] = { "<cmd>vsplit<cr>", "Sprit window to virticle" },
+
+    -- Resize window
+    ["<C-up>"] = { "<C-w>+", "Increase height" },
+    ["<C-down>"] = { "<C-w>-", "Decrease height" },
+    ["<C-right>"] = { "<C-w>>", "Increase width" },
+    ["<C-left>"] = { "<C-w><", "Decrease width" },
   },
+
+  -- Insert Mode
+  i = {
+    ["<C-f>"] = { "<ESC>//<left>", "Switch to Search Mode" },
+    ["<C-r>"] = { "<ESC>:%s///g<left><left><left>", "Switch to Replace Mode" },
+  },
+
+  -- Visual Mode
   v = {
     [">"] = { ">gv", "indent" },
   },
 }
 
+--
+-- Plugins Mappings
+--
+
+-- Specture: Search and replace in workspace
+-- https://github.com/nvim-pack/nvim-spectre
 M.spectre = {
   n = {
     ["<leader>sr"] = {
@@ -29,7 +57,7 @@ M.spectre = {
     },
   },
 }
-
+--
 M.trouble = {
   n = {
     ["<leader>xx"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics (Trouble)" },
