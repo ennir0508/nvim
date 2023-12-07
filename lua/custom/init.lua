@@ -50,3 +50,6 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 -- auto comment
 opt.formatoptions:append { "r" }
+
+-- global functions
+U = {}

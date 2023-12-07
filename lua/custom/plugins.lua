@@ -33,6 +33,19 @@ local plugins = {
   },
 
   {
+    "linux-cultist/venv-selector.nvim",
+    dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
+    filetypes = { "python" },
+
+    opts = {
+      -- Your options go here
+      -- name = "venv",
+      -- auto_refresh = false
+    },
+    lazy = true,
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
@@ -56,9 +69,6 @@ local plugins = {
     "NvChad/nvim-colorizer.lua",
   },
 
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
   {
     "mg979/vim-visual-multi",
     lazy = false,
@@ -67,7 +77,12 @@ local plugins = {
   {
     "rcarriga/nvim-notify",
     config = function()
-      vim.notify = require "notify"
+      local ok, notify = pcall(require, "notify")
+      if not ok then
+        vim.notify "Fail: nvim-notify"
+      end
+      notify.setup {}
+      vim.notify = notify
     end,
   },
 
@@ -93,6 +108,7 @@ local plugins = {
     cmd = { "TodoQuickFix", "TodoLocList", "TodoTrouble", "TodoTelescope" },
     opts = { overrides.todoComments },
   },
+
   -- install without yarn or npm
   {
     "iamcco/markdown-preview.nvim",

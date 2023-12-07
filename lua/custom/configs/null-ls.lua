@@ -3,10 +3,20 @@ local null_ls = require "null-ls"
 
 local b = null_ls.builtins
 
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 local sources = {
   -- webdev stuff
   b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
   b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
+
+  -- python
+  b.diagnostics.pylint.with {
+    diagnostics_postprocess = function(diagnostic)
+      diagnostic.code = diagnostic.message_id
+    end,
+  },
+  b.formatting.isort,
+  b.formatting.black,
 
   -- Lua
   b.formatting.stylua,

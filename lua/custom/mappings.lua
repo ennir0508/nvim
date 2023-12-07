@@ -57,6 +57,10 @@ M.spectre = {
     },
   },
 }
+
+--
+-- Trouble
+--
 --
 M.trouble = {
   n = {
@@ -93,6 +97,9 @@ M.trouble = {
   },
 }
 
+--
+-- todo
+--
 M.todo_comments = {
   n = {
     ["[t"] = {
@@ -114,6 +121,9 @@ M.todo_comments = {
   },
 }
 
+--
+-- markdown
+--
 M.markdown = {
   n = {
     ["<leader>mdp"] = { "<cmd> MarkdownPreview <cr>", "Markdown Preview" },
@@ -122,6 +132,21 @@ M.markdown = {
   },
 }
 
+--
+-- venv_selector
+--
+M.venv_selector = {
+  n = {
+    -- Keymap to open VenvSelector to pick a venv.
+    ["<leader>vs"] = { "<cmd> VenvSelect <cr>", "Open VenvSelector to pick a venv." },
+    -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
+    ["<leader>vc"] = { "<cmd> VenvSelectCached <cr>", "Retrieve the venv from a cache." },
+  },
+}
+
+--
+-- dap
+--
 M.dap = {
   n = {
     ["<leader>Dt"] = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },

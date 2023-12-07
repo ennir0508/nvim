@@ -65,7 +65,7 @@ lspconfig.custom_elements_ls.setup {
 
 -- Diagnostics refer to the identification and analysis of issues or problems.
 --     Already added as default
--- lspconfig.diagnosticls.setup {}
+lspconfig.diagnosticls.setup {}
 
 -- Docker Compose: Docker container configuration.
 --     Already added as default
@@ -77,20 +77,20 @@ lspconfig.dockerls.setup {}
 
 -- EFM (EditorConfig Format Manager): it manages code formatting in text editors.
 --     Already added as default
--- lspconfig.efm.setup {}
+lspconfig.efm.setup {}
 
 -- Emmet: a web development toolkit for quickly generating HTML/CSS code.
 
 -- ESLint: a static code analysis tool for identifying JavaScript errors.
--- lspconfig.eslint.setup {
---   --- ...
---   on_attach = function(client, bufnr)
---     vim.api.nvim_create_autocmd("BufWritePre", {
---       buffer = bufnr,
---       command = "EslintFixAll",
---     })
---   end,
--- }
+lspconfig.eslint.setup {
+  --- ...
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+}
 
 -- Gradle: a build automation tool for building software projects.
 lspconfig.gradle_ls.setup {}
@@ -99,7 +99,7 @@ lspconfig.gradle_ls.setup {}
 -- lspconfig.graphql.setup {}
 
 -- Groovy: a dynamic, object-oriented programming language for the Java platform.
--- lspconfig.groovyls.setup {}
+lspconfig.groovyls.setup {}
 
 -- Haskell: a functional programming language known for strong type systems.
 -- lspconfig.hls.setup {}
@@ -119,18 +119,17 @@ lspconfig.jdtls.setup {}
 -- lspconfig.lua_ls.setup {}
 
 -- Powershell: a powershell and command language for scripting tasks.
---     Already added as default
 lspconfig.powershell_es.setup {}
 
 -- Python: a versatile, high-level programming language known for readability.
--- lspconfig.pyright.setup {}
+lspconfig.pyright.setup {}
 
 -- Ruby: a dynamic, object-oriented programming language known for its simplicity.
 -- lspconfig.ruby_ls.setup {}
 -- lspconfig.rubocop.setup {}
 
 -- Rust: a systems programming language focused on safety and performance.
--- lspconfig.rust_analyzer.setup {}
+lspconfig.rust_analyzer.setup {}
 
 -- SQL (Structured Query Language) is used to manage and query databases.
 lspconfig.sqlls.setup {}
