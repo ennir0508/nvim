@@ -2,6 +2,9 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
+local util = require "lspconfig.util"
+local mason_path = vim.fn.stdpath "data" .. "/mason/"
+local mason_package_path = mason_path .. "packages/"
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
@@ -77,7 +80,9 @@ lspconfig.dockerls.setup {}
 
 -- EFM (EditorConfig Format Manager): it manages code formatting in text editors.
 --     Already added as default
-lspconfig.efm.setup {}
+lspconfig.efm.setup {
+  cmd = { mason_package_path .. "efm/efm-langserver_v0.0.49_windows_amd64/efm-langserver.exe" },
+}
 
 -- Emmet: a web development toolkit for quickly generating HTML/CSS code.
 
@@ -119,7 +124,24 @@ lspconfig.jdtls.setup {}
 -- lspconfig.lua_ls.setup {}
 
 -- Powershell: a powershell and command language for scripting tasks.
-lspconfig.powershell_es.setup {}
+local pses_dir = mason_package_path .. "powershell-editor-services/PowerShellEditorServices/"
+local pses_root_dir = util.root_pattern ".git"
+if not pses_root_dir then
+  pses_root_dir = pses_dir
+end
+lspconfig.powershell_es.setup {
+  bundle_path = pses_dir,
+  cmd = {
+    "pwsh",
+    "-NoLogo", --[[ "-NoProfile", ]]
+    "-Command",
+    pses_dir .. "Start-EditorServices.ps1",
+  },
+  root_dir = pses_root_dir,
+  init_options = {
+    enableProfileLoading = false,
+  },
+}
 
 -- Python: a versatile, high-level programming language known for readability.
 lspconfig.pyright.setup {}
