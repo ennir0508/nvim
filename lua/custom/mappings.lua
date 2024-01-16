@@ -6,7 +6,7 @@ M.general = {
   n = {
     [";"] = { ":", "Enter command mode", opts = { nowait = true } },
 
-    -- increment/decrement
+    -- Increment/Decrement
     ["+"] = { "<C-a>", "Increment", opts = { nowait = true } },
     ["-"] = { "<C-x>", "Decrement", opts = { nowait = true } },
 

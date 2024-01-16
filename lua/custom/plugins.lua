@@ -8,7 +8,7 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      -- format & linting
+      -- Formatter & Linter
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
@@ -22,7 +22,7 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
-  -- override plugin configs
+  -- Override plugin configs
   {
     "williamboman/mason.nvim",
     opts = overrides.mason

@@ -8,11 +8,11 @@
 
 local opt = vim.opt
 
-vim.scriptencoding = "utf-8"
-opt.encoding = "utf-8"
-opt.fileencoding = "utf-8"
-opt.fileformats = "unix,dos,mac"
-opt.backup = false
+vim.scriptencoding = "utf-8" -- Encode file utf-8.
+opt.encoding = "utf-8" -- Encode file utf-8.
+opt.fileencoding = "utf-8" -- Encode file utf-8.
+opt.fileformats = "unix,dos,mac" -- i.e. new line code.
+opt.backup = false -- Don't make backup file.
 opt.backupskip = "/tmp/*,/private/tmp/*"
 opt.swapfile = false -- Disables creating swap files.
 
@@ -35,6 +35,7 @@ opt.path:append { "**" } -- When searching for files, searches down into subfold
 
 -- Tab & Indent
 opt.breakindent = true
+opt.tapstop = 2
 opt.wrap = false
 opt.backspace = "start,eol,indent"
 
@@ -49,5 +50,5 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   command = "set nopaste",
 })
 
--- auto comment
+-- Auto comment
 opt.formatoptions:append { "r" }
