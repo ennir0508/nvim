@@ -52,6 +52,30 @@ M.nvimtree = {
       show = {
         git = true,
       },
+
+      glyphs = {
+        default = "󰈙", -- nf-md-file_document
+        symlink = "",
+        folder = {
+          default = "󰉋", -- nf-md-folder
+          empty = "󰉖", -- nf-md-folder_outline
+          empty_open = "󰷏", -- nf-md-folder_open_outline
+          open = "󰝰", -- nf-md-folder_open
+          symlink = "",
+          symlink_open = "",
+          arrow_open = "",
+          arrow_closed = "",
+        },
+        git = {
+          unstaged = "M",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "?", -- nf-fa-question
+          deleted = "",
+          ignored = "◌",
+        },
+      },
     },
   },
 }
