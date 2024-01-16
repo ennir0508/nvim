@@ -7,6 +7,7 @@
 -- })
 
 local opt = vim.opt
+local bo = vim.bo
 
 vim.scriptencoding = "utf-8" -- Encode file utf-8.
 opt.encoding = "utf-8" -- Encode file utf-8.
@@ -35,7 +36,6 @@ opt.path:append { "**" } -- When searching for files, searches down into subfold
 
 -- Tab & Indent
 opt.breakindent = true
-opt.tapstop = 2
 opt.wrap = false
 opt.backspace = "start,eol,indent"
 
