@@ -49,40 +49,51 @@ end
 -- lspconfig.awk_ls.setup {}
 
 -- Bash: a Unix shell and command language for scripting tasks.
-lspconfig.bashls.setup {}
+lspconfig.bashls.setup {
+  filetypes = { "sh" },
+}
 
 -- CSS (Cascading Style Sheets): it is used for web page styling.
 --     Already added as default
 -- lspconfig.cssls.setup {}
 
 -- CSS Modules: it provides local scope for CSS styles in web development.
-lspconfig.cssmodules_ls.setup {}
+lspconfig.cssmodules_ls.setup {
+  filetypes = { "html", "jsx", "javascriptreact", "tsx", "typescriptreact" },
+}
 
 -- Custom Elements: it allows creation of new HTML tags in web development.
-lspconfig.custom_elements_ls.setup {
-  filetypes = { "html", "javascript", "typescript", "javascriptreact", "typescriptreact", "jsx", "tsx", "vue" },
-}
+-- lspconfig.custom_elements_ls.setup {
+--   cmd = { "custom-elements-languageserver", "--stdio" },
+--   filetypes = { "html", "javascript", "jsx", "javascriptreact", "typescript", "tsx", "typescriptreact", "vue" },
+-- }
 
 -- Dart: a programming language for web and app development.
 -- lspconfig.dartls.setup {}
 
 -- Diagnostics refer to the identification and analysis of issues or problems.
 --     Already added as default
-lspconfig.diagnosticls.setup {}
+lspconfig.diagnosticls.setup {
+  filetypes = { "html", "javascript", "jsx", "javascriptreact", "typescript", "tsx", "typescriptreact", "vue" },
+}
 
 -- Docker Compose: Docker container configuration.
 --     Already added as default
-lspconfig.docker_compose_language_service.setup {}
+lspconfig.docker_compose_language_service.setup {
+  "yaml.docker-compose",
+}
 
 -- Docker: Platform for containerizing and deploying applications easily.
 --     Already added as default
-lspconfig.dockerls.setup {}
+lspconfig.dockerls.setup {
+  "dockerfile",
+}
 
 -- EFM (EditorConfig Format Manager): it manages code formatting in text editors.
 --     Already added as default
-lspconfig.efm.setup {
-  cmd = { mason_package_path .. "efm/efm-langserver_v0.0.49_windows_amd64/efm-langserver.exe" },
-}
+-- lspconfig.efm.setup {
+--   cmd = { mason_package_path .. "efm/efm-langserver_v0.0.49_windows_amd64/efm-langserver.exe" },
+-- }
 
 -- Emmet: a web development toolkit for quickly generating HTML/CSS code.
 
@@ -95,6 +106,7 @@ lspconfig.eslint.setup {
       command = "EslintFixAll",
     })
   end,
+  root_dir = util.root_pattern "tsconfig.json",
 }
 
 -- Gradle: a build automation tool for building software projects.
@@ -110,7 +122,7 @@ lspconfig.groovyls.setup {}
 -- lspconfig.hls.setup {}
 
 -- Java: a popular, versatile, and platform-independent programming language.
-lspconfig.jdtls.setup {}
+-- lspconfig.jdtls.setup {}
 
 -- JSON (JavaScript Object Notation): a lightweight data interchange format.
 --     Already added as default
@@ -161,6 +173,8 @@ lspconfig.sqlls.setup {}
 
 -- Tailwind CSS: a utility-first CSS framework for building responsive web designs quickly by applying pre-defined classes to HTML elements.
 lspconfig.tailwindcss.setup {}
+
+lspconfig.tsserver.setup {}
 
 -- Vue.js: a progressive JavaScript framework for building web applications.
 -- lspconfig.vuels.setup {}

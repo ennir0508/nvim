@@ -63,3 +63,5 @@ https://github.com/NvChad/nvcommunity
   - emmit for tsx
 - LSP
   - shell
+
+### Directpry Structures

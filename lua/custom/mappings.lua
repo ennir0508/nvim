@@ -61,7 +61,6 @@ M.spectre = {
 --
 -- Trouble
 --
---
 M.trouble = {
   n = {
     ["<leader>xx"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics (Trouble)" },

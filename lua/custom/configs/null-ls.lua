@@ -6,7 +6,7 @@ local b = null_ls.builtins
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 local sources = {
   -- webdev stuff
-  b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
+  -- b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
   b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
 
   -- python
@@ -23,6 +23,8 @@ local sources = {
 
   -- cpp
   b.formatting.clang_format,
+
+  b.formatting.rustfmt,
 }
 
 null_ls.setup {

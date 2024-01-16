@@ -25,6 +25,7 @@ opt.title = true -- Sets the title of the terminal window to the name of the fil
 opt.scrolloff = 10 -- Keeps 10 lines of context above and below the cursor.
 opt.inccommand = "split" -- Shows the effect of a command incrementally, highlighting the affected text.
 opt.termguicolors = true
+opt.helplang = "ja,en"
 
 -- Search
 opt.hlsearch = true -- Highlights all matching search patterns.
