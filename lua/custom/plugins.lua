@@ -47,19 +47,30 @@ local plugins = {
     end,
   },
 
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
+  -- vim-visual-multi
+  -- https://github.com/mg979/vim-visual-multi
+  --
+  -- Features:
+  -- - Select words with Ctrl-N (like Ctrl-d in Sublime Text/VS Code)
+  {
+    "mg979/vim-visual-multi",
+    lazy = false,
+  },
 
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
+  -- nvim-spectre
+  -- https://github.com/nvim-pack/nvim-spectre
+  --
+  {
+    "nvim-pack/nvim-spectre",
+    cmd = "Spectre",
+    opts = { open_cmd = "noswapfile vnew" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("spectre").setup()
+    end,
+  },
 }
 
 return plugins
