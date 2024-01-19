@@ -7,7 +7,6 @@
 -- })
 
 local opt = vim.opt
-local bo = vim.bo
 
 vim.scriptencoding = "utf-8" -- Encode file utf-8.
 opt.encoding = "utf-8" -- Encode file utf-8.
