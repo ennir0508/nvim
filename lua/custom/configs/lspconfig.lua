@@ -13,5 +13,17 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- 
+--
 -- lspconfig.pyright.setup { blabla }
+--
+
+lspconfig.rust_analyzer.setup {
+  settings = {
+    ["rust-analyzer"] = {
+      diagnostics = {
+        enable = false,
+        disabled = { "unresolved-proc-macro" },
+      },
+    },
+  },
+}

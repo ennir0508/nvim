@@ -13,7 +13,6 @@ lazy.nvim ~
 - WARNING {nvim-lspconfig}: overriding <config>
 ```
 
-
 ```log
 ==============================================================================
 nvim-treesitter: require("nvim-treesitter.health").check()
@@ -99,4 +98,20 @@ The visual mode key maps "gc", "gb" in plugins/init.lua merge to normal mode's.
 }
 ```
 
+## Rust LSP
 
+### FIX: proc macro `command` not expanded: cannot find proc-macro-srv, the workspace ... is missing a sysroot [unresolved-proc-macro]
+
+This is caused by rust-analyzer. The configuration ignore.
+
+```vim
+lspconfig.rust_analyzer.setup {
+  settings = {
+    ["rust-analyzer"] = {
+      diagnostics = {
+        disabled = { "unresolved-proc-macro" },
+      },
+    },
+  },
+}
+```

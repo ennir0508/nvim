@@ -12,6 +12,10 @@ local sources = {
   -- Lua
   b.formatting.stylua,
 
+  -- rust
+  -- install without mason.
+  b.formatting.rustfmt,
+
   -- cpp
   b.formatting.clang_format,
 }
