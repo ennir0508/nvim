@@ -41,5 +41,6 @@ M.general = {
 -- more keybinds!
 
 M.spectre = require("custom.configs.spectre").mappings
+M.trouble = require("custom.configs.trouble").mappings
 
 return M
