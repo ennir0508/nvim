@@ -84,7 +84,7 @@ WhichKey: checking conflicting keymaps ~
 - rhs: ` `
 ```
 
-### FIX: which-key: require("which-key.health").check()
+### FIXED: which-key: require("which-key.health").check()
 
 The visual mode key maps "gc", "gb" in plugins/init.lua merge to normal mode's.
 
@@ -100,7 +100,7 @@ The visual mode key maps "gc", "gb" in plugins/init.lua merge to normal mode's.
 
 ## Rust LSP
 
-### FIX: proc macro `command` not expanded: cannot find proc-macro-srv, the workspace ... is missing a sysroot [unresolved-proc-macro]
+### FIXED: proc macro `command` not expanded: cannot find proc-macro-srv, the workspace ... is missing a sysroot [unresolved-proc-macro]
 
 This is caused by rust-analyzer. The configuration ignore.
 

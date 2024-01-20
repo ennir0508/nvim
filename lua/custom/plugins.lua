@@ -71,6 +71,23 @@ local plugins = {
       require("spectre").setup()
     end,
   },
+
+  -- better diagnostics list and others
+  -- https://github.com/folke/trouble.nvim
+  {
+    "folke/trouble.nvim",
+    cmd = require("custom.configs.trouble").cmd,
+    opts = require("custom.configs.trouble").opts,
+  },
+
+  -- Finds and lists all of the TODO, HACK, BUG, etc comment in your project and loads them into a browsable list.
+  -- https://github.com/folke/todo-comments.nvim
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = require("custom.configs.todo").cmd,
+    opts = require("custom.configs.todo").opts,
+  },
 }
 
 return plugins

@@ -42,5 +42,6 @@ M.general = {
 
 M.spectre = require("custom.configs.spectre").mappings
 M.trouble = require("custom.configs.trouble").mappings
+M.todo_comments = require("custom.configs.todo").mappings
 
 return M
