@@ -5,7 +5,6 @@ M.general = {
   -- Noraml Mode
   n = {
     [";"] = { ":", "Enter command mode", opts = { nowait = true } },
-
     -- Increment/Decrement
     ["+"] = { "<C-a>", "Increment", opts = { nowait = true } },
     ["-"] = { "<C-x>", "Decrement", opts = { nowait = true } },
@@ -53,5 +52,7 @@ M.lazygit = {
     },
   },
 }
+
+require "custom.configs.japanese"
 
 return M
