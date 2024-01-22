@@ -43,5 +43,15 @@ M.general = {
 M.spectre = require("custom.configs.spectre").mappings
 M.trouble = require("custom.configs.trouble").mappings
 M.todo_comments = require("custom.configs.todo").mappings
+M.markdown_preview = require("custom.configs.markdown-preview").mappings
+
+M.lazygit = {
+  n = {
+    ["<leader>gg"] = {
+      "<cmd>terminal lazygit<cr>",
+      "Open lazygit",
+    },
+  },
+}
 
 return M
