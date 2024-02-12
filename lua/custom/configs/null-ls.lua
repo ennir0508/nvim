@@ -16,6 +16,15 @@ local sources = {
   -- install without mason.
   b.formatting.rustfmt,
 
+  -- python
+  b.diagnostics.pylint.with {
+    diagnostics_postprocess = function(diagnostic)
+      diagnostic.code = diagnostic.message_id
+    end,
+  },
+  b.formatting.isort,
+  b.formatting.black,
+
   -- cpp
   b.formatting.clang_format,
 }
@@ -39,3 +48,12 @@ null_ls.setup {
     end
   end,
 }
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  underline = true,
+  virtual_text = {
+    spacing = 5,
+    severity_limit = "Warning",
+  },
+  update_in_insert = true,
+})

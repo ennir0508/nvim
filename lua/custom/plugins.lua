@@ -35,12 +35,41 @@ local plugins = {
     opts = overrides.mason,
   },
 
+  -- nvim-jdtls - LSP for java
+  --
+  {
+    "mfussenegger/nvim-jdtls",
+  },
+
   -- Language Parser
   -- It provides query search, syntax highlight. It helps other plugins.
   -- https://github.com/nvim-treesitter/nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
+  },
+
+  {
+    "windwp/nvim-ts-autotag",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("nvim-ts-autotag").setup {
+        -- your config
+      }
+    end,
+    lazy = true,
+    event = "VeryLazy",
+  },
+
+  -- nvim-surround - Completion quotes and brackets
+  -- https://github.com/kylechui/nvim-surround
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {}
+    end,
   },
 
   -- Operation Assist

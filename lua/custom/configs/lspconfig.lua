@@ -13,9 +13,10 @@ for _, lsp in ipairs(servers) do
   }
 end
 
---
--- lspconfig.pyright.setup { blabla }
---
+lspconfig.pyright.setup {}
+
+lspconfig.jdtls.setup {}
+lspconfig.gradle_ls.setup {}
 
 lspconfig.rust_analyzer.setup {
   settings = {
@@ -27,3 +28,5 @@ lspconfig.rust_analyzer.setup {
     },
   },
 }
+
+lspconfig.emmet_ls.setup {}
